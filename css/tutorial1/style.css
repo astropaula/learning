@@ -7,11 +7,26 @@
    - Minify css
    - Download fonts, which will be used in project - not whole family
    - Pseude elements can not be used in elements without the content ex.img (without closing tag) */
-body {
-    font-size: 70px;
-    color: black;
-    background-color: white;
+
+   body {
+    font: 70px Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
+
+.box1 {
+    background-color: lightblue;
+    display: grid;
+    justify-items: center;
+}
+.box2 {
+    background-color: lightgreen;
+}
+.box3 {
+    background-color: lightcoral;
+}
+
 .list-item1 {
     position: relative;
 }
