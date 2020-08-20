@@ -5,9 +5,12 @@
    - Do not use float
    - Photos in .jpg, transparent: .png, icon: .svg
    - Minify css
-   - Download fonts, which will be used in project - not whole family */
+   - Download fonts, which will be used in project - not whole family
+   - Pseude elements can not be used in elements without the content ex.img (without closing tag) */
 body {
-    font-size: 100px;
+    font-size: 70px;
+    color: black;
+    background-color: white;
 }
 .list-item1 {
     position: relative;
@@ -68,3 +71,46 @@ button {
 }
 
 /*----------------*/
+.ba p{
+    font-size: 30px;
+    position: relative;
+}
+
+.ba{
+    display: flex;
+    justify-content: center;
+}
+
+.ba p::before {
+    content: 'Siemaneczko ';
+
+}
+
+.ba p::after {
+    content: '!';
+}
+
+.ba p::before {
+    content: url('https://image.flaticon.com/icons/svg/112/112715.svg');
+    content: '';
+    position: absolute;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    transform: transform .8s ease-in;
+    will-change: transform;
+    background-color: blue;
+}
+
+.ba p:hover::before {
+    /* transform: translateX(-20px); */
+    transform: scale(1.5);
+}
+.ba p::after {
+    content: '';
+    position: absolute;
+    right: -30px; 
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}
