@@ -6,7 +6,9 @@
    - Photos in .jpg, transparent: .png, icon: .svg
    - Minify css
    - Download fonts, which will be used in project - not whole family
-   - Pseude elements can not be used in elements without the content ex.img (without closing tag) */
+   - Pseudoelements can not be used in elements without the content ex.img (without closing tag)
+   - Try to avoid layout and paint step in rendering in browser.
+   - Efficient animations: opaciti & transform.  */
 
    body {
     font: 70px Arial, sans-serif;
@@ -21,13 +23,16 @@
 .box1 {
     background-color: lightblue;
     display: grid;
-    justify-items: center;
+    justify-content: center;
 }
 .box2 {
     background-color: lightgreen;
 }
 .box3 {
     background-color: lightcoral;
+}
+.box4 {
+    place-self: center;
 }
 
 .list-item1 {
@@ -76,7 +81,7 @@
 .navigation {
     font-size: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -136,4 +141,54 @@ button {
 
 .ba p:hover::after {
      transform: translateX(50px); */
+}
+/*-------------------*/
+
+.box4 button {
+    position: relative;
+    margin: 50px;
+    padding: 10px 30px;
+    border: 2px solid blueviolet;
+    color: blueviolet;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+}
+
+.in {
+    transition: box-shadow 2s ease-in, top 2s ease-out;
+    top: 0;
+}
+
+.in:hover {
+    box-shadow: 0 2px 50px -3px black;
+    top: 15px;
+}
+
+.up {
+    will-change: transform; /*One value, create extra layer - easier rendering, but will-change needs memory */
+    transition: transform 1s ease-out;
+}
+
+.up:hover {
+    transform: translateY(15px); 
+}
+
+.up::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 2px 50px -3px black;
+    transition: opacity 2s ease-in-out;
+    will-change: opacity, transform;
+    transform: translateZ(0);
+}
+
+.up:hover::after {
+    opacity: 1;
 }
