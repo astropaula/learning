@@ -1,0 +1,70 @@
+/* - Use selectors cleverly, make classes not nested selectors! 
+   - Fonts information placed in parent object is passed to children objects 
+   - Universal selector -> * is inefficient most times is used to set box-sizing
+   -  Use shorthands like -> margin: 1 2 3 4; background: (...); font: (...); etc.
+   - Do not use float
+   - Photos in .jpg, transparent: .png, icon: .svg
+   - Minify css
+   - Download fonts, which will be used in project - not whole family */
+body {
+    font-size: 100px;
+}
+.list-item1 {
+    position: relative;
+}
+
+.list-item1::before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+.list-item1::after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: coral;
+}
+/* More clear version: */
+.list-item2 {
+    position: relative;
+}
+.list-item2::before, .list-item2::after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.list-item2::before {
+    background-color: blue;
+    left: -50px;
+}
+.list-item2::after {
+    background-color: coral;
+    right: -50px;
+}
+
+/*----------------*/
+
+.navigation {
+    font-size: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation li {
+    display: inline-block;
+}
+
+button {
+    height: 50px;
+}
+
+/*----------------*/
