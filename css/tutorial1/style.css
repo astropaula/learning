@@ -10,9 +10,12 @@
 
    body {
     font: 70px Arial, sans-serif;
+    background-color: lightslategray;
+    margin: 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+
 }
 
 .box1 {
@@ -127,5 +130,10 @@ button {
     right: -30px; 
     width: 30px;
     height: 30px;
+    transform: transform .8s ease-in;
     background-color: red;
+}
+
+.ba p:hover::after {
+     transform: translateX(50px); */
 }
