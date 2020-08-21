@@ -51,8 +51,8 @@ body {
 }
 
 .box1 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
     background-color: #ffbe0b;
     /* opacity: 0; */
@@ -70,8 +70,8 @@ body {
 }
 
 .box2 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
     background-color: #fb5607;
     animation-name: move;
@@ -84,15 +84,15 @@ body {
 }
 
 .box3 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
     background-color: #ff006e;
     animation: scaling 1s .5s both infinite alternate ease-in-out;
 }
 .box4 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 20px;
     background-color: #8338ec;
     animation: turn 2s .2s both infinite alternate ease-out;
