@@ -1,0 +1,102 @@
+/*Do not animate: top, width, height, bottom, lrft, right - Do transform/translate. */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(300px);
+    }
+}
+
+@keyframes scaling {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #ffbe0b;
+    /* opacity: 0; */
+    animation-name: appear;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    /* animation-fill-mode: forwards; */
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.box1:hover {
+    animation-play-state: paused;
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #fb5607;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.22,.61,.68,.63);
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #ff006e;
+    animation: scaling 1s .5s both infinite alternate ease-in-out;
+}
+.box4 {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #8338ec;
+    animation: turn 2s .2s both infinite alternate ease-out;
+}
+.box5 {
+    background-color: #3a86ff; 
+}
