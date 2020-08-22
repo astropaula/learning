@@ -1,0 +1,158 @@
+@keyframes appearFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(500px);
+        border-radius: 50px;
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        transform: rotate(45deg);
+        border-radius: 0;
+    }
+    100% {
+        transform: rotate(45deg) scaleX(5);
+    }
+}
+
+@keyframes appearFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(500px);
+        border-radius: 50px;
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        transform: rotate(-45deg);
+        border-radius: 0;
+    }
+    100% {
+        transform: rotate(-45deg) scaleX(5);
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    width: 500px;
+    height: 800px;
+}
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: opacity .25s ease-in-out;
+    transition: background-color .25s .3s ease-in-out;
+}
+
+.box--from-top {
+    animation: appearFromTop 3s .5s both;
+}
+
+.box--from-bottom {
+    animation: appearFromBottom 3s .5s both;
+}
+
+.dot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50px;
+    border: none;
+    animation: appear 1.5s 4.5s ease-in-out both;
+    transition: background-color .25s .1s ease-in-out;
+}
+
+.dot::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.dot:hover::after {
+    opacity: 0;
+}
+
+.dot--left{
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.dot--left:hover {
+    background-color: tomato;
+}
+
+.dot--left:hover ~ .box {
+    background-color: tomato;
+}
+
+.dot--right{
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.dot--right:hover {
+    background-color: rebeccapurple;
+}
+
+.dot--right:hover ~ .box {
+    background-color: rebeccapurple;
+}
+
+.dot--top{
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%); 
+}
+
+.dot--top:hover {
+    background-color: lawngreen;
+}
+
+.dot--top:hover ~ .box {
+    background-color: lawngreen;
+}
+
+.dot--bottom{
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%); 
+}
+
+.dot--bottom:hover {
+    background-color: darkblue;
+}
+
+.dot--bottom:hover ~ .box {
+    background-color: darkblue;
+}
