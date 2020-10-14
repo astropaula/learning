@@ -31,12 +31,12 @@ body {
 .puzzle .word .letter::before {
     content: "";
     display: inline-block;
-    height: 100%;
+    height: 100%; 
     vertical-align: middle;
 }
 
 .puzzle .word .letter:last-child{
-    margin-right:auto;
+    margin-right: auto;
 }
 
 .puzzle .word .pivot {
