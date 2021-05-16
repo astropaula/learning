@@ -13,15 +13,18 @@
   <div class="wrapper">
     <div class="controls">
       <div>
-        <button class="pagination" id='prev'>prev</button>
+        <button class="pagination" id='prev' disabled>prev</button>
         <button class="pagination" id='next'>next</button>
       </div>
-      <p class="pageLabel">PageNo 1</p>
+      <p class="pageLabel">PageNo 1/13</p>
     </div>
     <div class="controls">
       <p class="voltage">More % than</p>
-      <input type="text" placeholder="0.0%"/>
-      <button>send</button>
+      <input class='voltageInput' type="text" placeholder="0.0"/>
+      <div class="wrapper">
+        <button class="inputButton" id="less">less</button>
+        <button class="inputButton" id="more">more</button>
+      </div>
     </div>
   </div>
 </div>
