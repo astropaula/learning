@@ -6,7 +6,7 @@ There is practically no creative work of mine here
 
 ### `api`
 * **01** Working with `https://api.punkapi.com/v2/beers` in plain JS using `XMLHttpRequest` and `fetch`. <br>Applied pagination and filtering using api parameters :beers: <br>
-* **02** Using `fetch` in `React` to connect app with backend and CMS.
+* **02** Using `fetch` and `graphql` in `React` to connect app with backend and CMS.
 
 ### `css`
 CSS exercises
