@@ -1,5 +1,2 @@
-## learning_repository
-
-Repository made for myself to track process of daily learning. <br>
-There is practically no creative work of mine here 
-:monkey:
+## node.js and express.js
+* Files related to the course `https://www.youtube.com/watch?v=Oe421EPjeBE&t`
